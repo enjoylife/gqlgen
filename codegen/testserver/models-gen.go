@@ -53,6 +53,7 @@ type Keywords struct {
 	Import      string `json:"import"`
 	Return      string `json:"return"`
 	Var         string `json:"var"`
+	Underscore  string `json:"_"`
 }
 
 type OuterInput struct {

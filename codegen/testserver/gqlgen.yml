@@ -38,3 +38,6 @@ models:
     model: "github.com/99designs/gqlgen/codegen/testserver.Error"
   EmbeddedPointer:
     model: "github.com/99designs/gqlgen/codegen/testserver.EmbeddedPointerModel"
+  Keywords:
+    fields:
+      _: { fieldName: Underscore }
