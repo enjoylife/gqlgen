@@ -214,7 +214,7 @@ func lintName(name string) string {
 // For instance, "ID" is fine (Freudian code is rare), but "AND" is not.
 var commonInitialisms = map[string]bool{
 	"ACL":   true,
-	"API":   true,
+	//"API":   true,
 	"ASCII": true,
 	"CPU":   true,
 	"CSS":   true,
