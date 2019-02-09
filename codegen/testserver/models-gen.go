@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"time"
 )
 
 type InnerDirectives struct {
@@ -26,7 +27,22 @@ type InputDirectives struct {
 	InnerNullable *InnerDirectives `json:"innerNullable"`
 }
 
-type Keywords struct {
+type OuterInput struct {
+	Inner InnerInput `json:"inner"`
+}
+
+type OuterObject struct {
+	Inner InnerObject `json:"inner"`
+}
+
+type User struct {
+	ID      int        `json:"id"`
+	Friends []User     `json:"friends"`
+	Created time.Time  `json:"created"`
+	Updated *time.Time `json:"updated"`
+}
+
+type ValidInput struct {
 	Break       string `json:"break"`
 	Default     string `json:"default"`
 	Func        string `json:"func"`
@@ -52,19 +68,15 @@ type Keywords struct {
 	Import      string `json:"import"`
 	Return      string `json:"return"`
 	Var         string `json:"var"`
+	Underscore  string `json:"_"`
 }
 
-type OuterInput struct {
-	Inner InnerInput `json:"inner"`
-}
-
-type OuterObject struct {
-	Inner InnerObject `json:"inner"`
-}
-
-type User struct {
-	ID      int    `json:"id"`
-	Friends []User `json:"friends"`
+//  These things are all valid, but without care generate invalid go code
+type ValidType struct {
+	DifferentCase      string `json:"differentCase"`
+	DifferentCaseOld   string `json:"different_case"`
+	ValidInputKeywords bool   `json:"validInputKeywords"`
+	ValidArgs          bool   `json:"validArgs"`
 }
 
 type Status string

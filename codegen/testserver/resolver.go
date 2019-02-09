@@ -7,6 +7,8 @@ import (
 	"github.com/99designs/gqlgen/codegen/testserver/invalid-packagename"
 )
 
+// THIS CODE IS A STARTING POINT ONLY. IT WILL NOT BE UPDATED WITH SCHEMA CHANGES.
+
 type Resolver struct{}
 
 func (r *Resolver) ForcedResolver() ForcedResolverResolver {
@@ -45,7 +47,7 @@ func (r *queryResolver) InvalidIdentifier(ctx context.Context) (*invalid_package
 func (r *queryResolver) Collision(ctx context.Context) (*introspection1.It, error) {
 	panic("not implemented")
 }
-func (r *queryResolver) MapInput(ctx context.Context, input *map[string]interface{}) (*bool, error) {
+func (r *queryResolver) MapInput(ctx context.Context, input map[string]interface{}) (*bool, error) {
 	panic("not implemented")
 }
 func (r *queryResolver) Recursive(ctx context.Context, input *RecursiveInputSlice) (*bool, error) {
@@ -55,9 +57,6 @@ func (r *queryResolver) NestedInputs(ctx context.Context, input [][]*OuterInput)
 	panic("not implemented")
 }
 func (r *queryResolver) NestedOutputs(ctx context.Context) ([][]*OuterObject, error) {
-	panic("not implemented")
-}
-func (r *queryResolver) Keywords(ctx context.Context, input *Keywords) (bool, error) {
 	panic("not implemented")
 }
 func (r *queryResolver) Shapes(ctx context.Context) ([]Shape, error) {
@@ -90,7 +89,13 @@ func (r *queryResolver) DirectiveInputNullable(ctx context.Context, arg *InputDi
 func (r *queryResolver) DirectiveInput(ctx context.Context, arg InputDirectives) (*string, error) {
 	panic("not implemented")
 }
-func (r *queryResolver) KeywordArgs(ctx context.Context, breakArg string, defaultArg string, funcArg string, interfaceArg string, selectArg string, caseArg string, deferArg string, goArg string, mapArg string, structArg string, chanArg string, elseArg string, gotoArg string, packageArg string, switchArg string, constArg string, fallthroughArg string, ifArg string, rangeArg string, typeArg string, continueArg string, forArg string, importArg string, returnArg string, varArg string) (bool, error) {
+func (r *queryResolver) InputSlice(ctx context.Context, arg []string) (bool, error) {
+	panic("not implemented")
+}
+func (r *queryResolver) ShapeUnion(ctx context.Context) (ShapeUnion, error) {
+	panic("not implemented")
+}
+func (r *queryResolver) ValidType(ctx context.Context) (*ValidType, error) {
 	panic("not implemented")
 }
 
